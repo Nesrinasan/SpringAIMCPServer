@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+#  main:
+#    web-application-type: servlet   # WebFlux'a düşmeyi engeller, varsayılanı servlet.
+  ai:
+    mcp:
+      server:
+        enabled: true
+        name: demo-mcp-server
+        version: 1.0.0
+        type: SYNC
+        stdio: false
+        capabilities:
+          tool: true
+          resource: true
+          prompt: true
+          completion: true
+        protocol: streamable
+        streamable-http:
+          mcp-endpoint: /yyy

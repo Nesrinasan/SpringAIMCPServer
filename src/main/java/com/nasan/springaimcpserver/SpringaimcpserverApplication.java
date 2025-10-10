@@ -2,6 +2,9 @@ package com.nasan.springaimcpserver;
 
 import com.nasan.springaimcpserver.service.CalcTools;
 import com.nasan.springaimcpserver.service.EmployeeTools;
+import com.nasan.springaimcpserver.service.FlightSearchTool;
+import com.nasan.springaimcpserver.service.HotelSearchTool;
+import com.nasan.springaimcpserver.service.TravelDataTool;
 import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.ai.tool.method.MethodToolCallbackProvider;
 import org.springframework.boot.SpringApplication;
@@ -17,7 +20,11 @@ public class SpringaimcpserverApplication {
 	}
 
 	@Bean
-	ToolCallbackProvider toolCallbacks(EmployeeTools tools, CalcTools calcTools) {
-		return MethodToolCallbackProvider.builder().toolObjects(tools, calcTools).build();
+	ToolCallbackProvider toolCallbacks(EmployeeTools tools, CalcTools calcTools,
+			FlightSearchTool flightSearchTool, HotelSearchTool hotelSearchTool, 
+			TravelDataTool travelDataTool) {
+		return MethodToolCallbackProvider.builder()
+				.toolObjects(tools, calcTools, flightSearchTool, hotelSearchTool, travelDataTool)
+				.build();
 	}
 }

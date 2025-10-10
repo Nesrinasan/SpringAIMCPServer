@@ -2,8 +2,6 @@ server:
   port: 8080
 
 spring:
-#  main:
-#    web-application-type: servlet   # WebFlux'a düşmeyi engeller, varsayılanı servlet.
   ai:
     mcp:
       server:
@@ -18,5 +16,5 @@ spring:
           prompt: true
           completion: true
         protocol: streamable
-        streamable-http:
-          mcp-endpoint: /yyy
+#        streamable-http:
+#          mcp-endpoint: /yyy
